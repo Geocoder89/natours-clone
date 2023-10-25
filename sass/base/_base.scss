@@ -1,0 +1,54 @@
+/* BASIC RESET USING THE UNIVERSAL SELECTOR */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* root font size is set in the html */
+
+html {
+  font-size: 62.5%;
+  
+
+  @include respond(tab-land) {
+    // width < 1200 ?
+    // 9px/16 * 100 
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+      // width <  900?
+    //  8px/16 * 100
+    font-size: 50%;  
+  }
+
+
+ 
+
+  @include respond(big-desktop) {
+     // width <  ?
+    // 12/16 * 100
+    font-size: 75%;
+  }
+}
+
+// setting the body to border-box
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    // width <  900?
+  //  8px/16 * 100
+  padding: 0; 
+}
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
